@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторная работа 8 — CSS разных типов</title>
+    
+    <!-- Способ 1: Связывание внешнего файла стилей (самый низкий приоритет) -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+    
+    <!-- Способ 2: Внедрённые стили (в теге <style>) — переопределяют часть внешних -->
+    <style>
+        /* Импорт другого файла (если бы был) — здесь просто пример */
+        /* @import url("дополнительные-стили.css"); */
+        
+        h1 {
+            color: #8e44ad !important;           /* переопределяем и повышаем приоритет */
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+        }
+        
+        .special-text {
+            font-style: italic;
+            color: #d35400;
+            font-weight: bold;
+        }
+        
+        .highlight {
+            background-color: #ffeaa7 !important; /* Переопределяем с !important */
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Добро пожаловать!</h1>
+    
+    <h2>Демонстрация разных уровней приоритета CSS</h2>
+    
+    <p>Этот текст оформлен по правилам из файла <code>styles.css</code>.</p>
+    
+    <p class="highlight">А этот абзац использует класс <span class="special-text">.highlight</span> 
+    и дополнительно класс <span class="special-text">special-text</span>, 
+    который задан уже во внедрённых стилях.</p>
+    
+    <p style="color: #c0392b; font-size: 1.3em; text-align: center;">
+        ← Этот текст оформлен самым высоким приоритетом — встроенный стиль (inline style)
+    </p>
+    
+    <a href="#" class="btn">Красивая кнопка</a>
+
+    <h2>Дополнительные примеры приоритетов</h2>
+    
+    <p id="unique-para">Этот абзац имеет уникальный ID <code>#unique-para</code> и класс <code>highlight</code>. 
+    Стили для ID имеют более высокий приоритет, чем для классов.</p>
+    
+    <div class="example-box">
+        <p>Этот текст внутри div с классом <code>example-box</code>.</p>
+        <p class="nested">А этот — с дополнительным классом <code>nested</code>.</p>
+    </div>
+
+</div>
+
+    <footer>
+        <p>&copy; 2026 Лабораторная работа 8. Демонстрация CSS приоритетов.</p>
+    </footer>
+
+</body>
+</html>
