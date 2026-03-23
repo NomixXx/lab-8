@@ -200,7 +200,7 @@ footer::before {
     content: '';
     position: absolute;
     top: 0%;
-    left: 0%;
+    left: -100%;
     width: 200%;
     height: 200%;
     background: repeating-linear-gradient(
